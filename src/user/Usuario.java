@@ -12,7 +12,6 @@ public class Usuario {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Escolha sua ação");
-
         System.out.println("1 - Utilizar funções de telefone");
         System.out.println("2 - Escutar musica");
         System.out.println("3 - Navegar na internet");
