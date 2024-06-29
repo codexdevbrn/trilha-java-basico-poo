@@ -5,11 +5,10 @@ import java.util.Scanner;
 import aparelho.Iphone;
 
 public class Usuario {
+
+    static Iphone phone = new Iphone();
+    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-
-        Iphone phone = new Iphone();
-
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("Escolha sua ação");
         System.out.println("1 - Utilizar funções de telefone");
@@ -20,7 +19,11 @@ public class Usuario {
         if (select > 3 && select <= 0) {
             System.out.println("Escolha uma opção válida");
         }
-        switch (select) {
+        execute(select);
+    }
+
+    public static void execute(int result) {
+        switch (result) {
             case 1:
                 System.out.println("O que deseja fazer? 1- Ligar / 2- Atender / 3- Escutar o correio de voz");
                 int value = sc.nextInt();
