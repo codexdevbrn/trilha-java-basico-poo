@@ -8,18 +8,27 @@ public class Usuario {
 
     static Iphone phone = new Iphone();
     static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
 
+        openMenu();
+        int select = sc.nextInt();
+            if (select > 3 || select <= 0) {
+                System.out.println("Escolha uma opção válida");
+                openMenu();
+                select = sc.nextInt();
+                execute(select);
+            } else {
+                execute(select);
+            }
+        
+    }
+
+    public static void openMenu() {
         System.out.println("Escolha sua ação");
         System.out.println("1 - Utilizar funções de telefone");
         System.out.println("2 - Escutar musica");
         System.out.println("3 - Navegar na internet");
-        int select = sc.nextInt();
-
-        if (select > 3 && select <= 0) {
-            System.out.println("Escolha uma opção válida");
-        }
-        execute(select);
     }
 
     public static void execute(int result) {
