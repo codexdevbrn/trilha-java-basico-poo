@@ -10,18 +10,16 @@ public class Usuario {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         openMenu();
         int select = sc.nextInt();
-            if (select > 3 || select <= 0) {
-                System.out.println("Escolha uma opção válida");
-                openMenu();
-                select = sc.nextInt();
-                execute(select);
-            } else {
-                execute(select);
-            }
-        
+
+        while (select > 3 || select <= 0) {
+            System.out.println("Escolha uma opção válida");
+            openMenu();
+            select = sc.nextInt();
+            execute(select);
+        }
+        sc.close();
     }
 
     public static void openMenu() {
@@ -76,6 +74,5 @@ public class Usuario {
             default:
                 break;
         }
-        sc.close();
     }
 }
